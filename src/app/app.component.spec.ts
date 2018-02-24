@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { Component } from '@angular/core';
+import { ProgressComponent } from './components/progress/progress.component';
 
 @Component({
   selector: 'app-input',
@@ -21,6 +22,7 @@ describe('AppComponent', () => {
         AppComponent,
         InputComponent,
         EquityComponent,
+        ProgressComponent,
       ],
     }).compileComponents();
   }));

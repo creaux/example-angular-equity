@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProgressService } from '../../providers/progress/progress.service';
-import { delay } from 'rxjs/operators';
+import { ReplaySubject } from 'rxjs';
 
 @Component({
   selector: 'app-progress',
@@ -19,14 +19,13 @@ import { delay } from 'rxjs/operators';
       ></div>
     </div>
   `,
-  styleUrls: ['./progress.component.scss']
 })
 export class ProgressComponent {
   constructor(
     private progress: ProgressService,
   ) {}
 
-  get active$() {
+  get active$(): ReplaySubject<boolean> {
     return this.progress.active$;
   }
 }

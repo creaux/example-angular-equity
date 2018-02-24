@@ -2,7 +2,7 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpResponse, HTT
 import { Inject, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { REQUEST_CACHE_TOKEN, RequestCacheService } from './request-cache.service';
+import { RequestCacheService } from './request-cache.service';
 
 const TTL = 36000;
 
@@ -11,7 +11,7 @@ const TTL = 36000;
 })
 export class RequestCacheInterceptor implements HttpInterceptor {
   constructor(
-    @Inject(REQUEST_CACHE_TOKEN) private cache: RequestCacheService,
+    private cache: RequestCacheService,
   ) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {

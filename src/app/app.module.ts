@@ -8,7 +8,6 @@ import { ID_PROVIDER } from './providers/id/id.provider';
 import { HttpClientModule } from '@angular/common/http';
 import { ExchangePipe } from './pipes/exchange.pipe';
 import { REQUEST_CACHE_INTERCEPTOR } from './interceptors/request-cache.interceptor';
-import { REQUEST_CACHE_SERVICE } from './interceptors/request-cache.service';
 import { ProgressComponent } from './components/progress/progress.component';
 import { ERROR_HANDLER_INTERCEPTOR } from './interceptors/error-handler.interceptor';
 
@@ -31,7 +30,6 @@ import { ERROR_HANDLER_INTERCEPTOR } from './interceptors/error-handler.intercep
       REQUEST_CACHE_INTERCEPTOR,
       ERROR_HANDLER_INTERCEPTOR,
     ],
-    REQUEST_CACHE_SERVICE,
   ],
   bootstrap: [AppComponent]
 })

@@ -3,8 +3,6 @@ import { Injectable, InjectionToken } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpEvent, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-export const REQUEST_CACHE_TOKEN = new InjectionToken<string>('ID_PROVIDER_TOKEN');
-
 @Injectable({
   providedIn: 'root'
 })
@@ -40,8 +38,3 @@ export class RequestCacheService {
     }
   }
 }
-
-export const REQUEST_CACHE_SERVICE = {
-  provide: REQUEST_CACHE_TOKEN,
-  useFactory() { return new RequestCacheService(); },
-};

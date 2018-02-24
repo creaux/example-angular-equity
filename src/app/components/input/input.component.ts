@@ -58,7 +58,7 @@ export class InputComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private investmentService: EquityService,
+    private equityService: EquityService,
     private currenciesService: CurrencyService,
   ) {
     const controls = {
@@ -66,7 +66,10 @@ export class InputComponent {
         Validators.required,
         Validators.minLength(3),
       ])],
-      amount: ['', Validators.required],
+      amount: ['', Validators.compose([
+        Validators.required,
+        Validators.pattern(/^[0-9]*$/)
+      ])],
     };
 
     this.form = this.formBuilder.group(controls);
@@ -77,7 +80,7 @@ export class InputComponent {
   }
 
   submit() {
-    this.investmentService.add(this.form.value);
+    this.equityService.add(this.form.value);
     this.form.reset();
   }
 }

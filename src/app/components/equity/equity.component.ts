@@ -74,28 +74,30 @@ export class EquityComponent implements OnInit {
     this.subscribe();
   }
 
-  subscribe() {
+  public subscribe() {
     this.subscription = this.equities$.subscribe((equity) => {
       this.equities.push(equity);
     });
   }
 
-  unsubscribe() {
+  public unsubscribe() {
     this.subscription.unsubscribe();
     this.equities = [];
   }
 
-  get equities$(): ReplaySubject<EquityModel> {
+  public get equities$(): ReplaySubject<EquityModel> {
     return this.service.equities$;
   }
 
-  get total$() {
+  public get total$() {
     return this.service.total$('EUR');
   }
 
-  remove(id) {
+  public remove(id) {
     this.unsubscribe();
     this.service.remove(id);
     this.subscribe();
   }
+
+  // TODO: Test view
 }
