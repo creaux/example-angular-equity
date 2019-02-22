@@ -3,7 +3,6 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpResponse,
   HTTP_INTERCEPTORS,
   HttpErrorResponse
 } from '@angular/common/http';
@@ -14,7 +13,7 @@ import { tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-class ErrorHandlerInterceptor implements HttpInterceptor {
+export class ErrorHandlerInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(tap((event: HttpEvent<any>) => {
     }, (err: any) => {

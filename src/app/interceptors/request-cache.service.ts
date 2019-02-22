@@ -43,5 +43,5 @@ export class RequestCacheService {
 
 export const REQUEST_CACHE_SERVICE = {
   provide: REQUEST_CACHE_TOKEN,
-  useFactory: () => new RequestCacheService(),
+  useFactory() { return new RequestCacheService(); },
 };

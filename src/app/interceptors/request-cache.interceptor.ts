@@ -1,7 +1,7 @@
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpResponse, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { finalize, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { REQUEST_CACHE_TOKEN, RequestCacheService } from './request-cache.service';
 
 const TTL = 36000;
@@ -9,7 +9,7 @@ const TTL = 36000;
 @Injectable({
   providedIn: 'root'
 })
-class RequestCacheInterceptor implements HttpInterceptor {
+export class RequestCacheInterceptor implements HttpInterceptor {
   constructor(
     @Inject(REQUEST_CACHE_TOKEN) private cache: RequestCacheService,
   ) {}
