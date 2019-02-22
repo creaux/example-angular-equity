@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+
+.input-group > .input-group-prepend > .form-control,
+.input-group > .input-group-append:not(:last-child) > .form-control {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+
+//@import "~bootstrap/scss/functions";
+//@import "~bootstrap/scss/variables";
+//@import "~bootstrap/scss/mixins";
+//
+//@import "~bootstrap/scss/reboot";
+//@import "~bootstrap/scss/type";
+//@import "~bootstrap/scss/images";
+//@import "~bootstrap/scss/code";
+//@import "~bootstrap/scss/grid";
+//@import "~bootstrap/scss/tables";
+//@import "~bootstrap/scss/forms";
+//@import "~bootstrap/scss/buttons";
+//@import "~bootstrap/scss/dropdown";
+//@import "~bootstrap/scss/tables";
+//
+//@import "~bootstrap/scss/input-group";
